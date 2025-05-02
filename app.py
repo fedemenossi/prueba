@@ -14,6 +14,7 @@ def obtener_datos():
     cursor.execute("SELECT id, descripcion FROM railway.tabla1")
     resultados = cursor.fetchall()
     db.close()
+    
     return resultados
 
 
@@ -25,7 +26,7 @@ def home():
 @app.route("/tabla1")
 def mostrar_tabla():
     datos = obtener_datos()
-    return render_template("tabla.html", datos=datos)
+    return render_template("tabla.html", datos2=datos)
 
 
 
