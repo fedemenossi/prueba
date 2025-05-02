@@ -12,7 +12,7 @@ def obtener_datos():
             database="railway"
         )
     cursor = db.cursor()
-    cursor.execute("SELECT * from railway.Tabla1")
+    cursor.execute("SELECT * from railway.Clietentes")
     resultados = cursor.fetchall()
     db.close()
     return resultados

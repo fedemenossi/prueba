@@ -8,16 +8,12 @@ db = mysql.connector.connect(
     database="railway"
 )
 
-
-##mysql -h centerbeam.proxy.rlwy.net -u root -p QbnIpcJeXYYoQYvhnPUjAALwmhmswmmg --port 12935 --protocol=TCP railway
-
-
 cursor = db.cursor()
-cursor.execute("SELECT * from railway.Tabla1")
+cursor.execute("SELECT * from railway.Clietentes")
 filas=cursor.fetchall()
 
 for fila in filas:
-    print(f"ID: {fila[0]} - Descripción: {fila[1]}")
+    print(f"CUIL: {fila[0]} - Nombre: {fila[1]} - Apellido: {fila[2]}")
     
     
 
