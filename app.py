@@ -3,15 +3,14 @@ import mysql.connector
 
 app = Flask(__name__)
 
-db = mysql.connector.connect(
-        host="centerbeam.proxy.rlwy.net",                                    
-        port=12935,
-        user="root",
-        password="QbnIpcJeXYYoQYvhnPUjAALwmhmswmmg",
-        database="railway"
-    )
-
 def obtener_datos():
+    db = mysql.connector.connect(
+            host="centerbeam.proxy.rlwy.net",                                    
+            port=12935,
+            user="root",
+            password="QbnIpcJeXYYoQYvhnPUjAALwmhmswmmg",
+            database="railway"
+        )
     cursor = db.cursor()
     cursor.execute("SELECT * from railway.Tabla1")
     resultados = cursor.fetchall()
