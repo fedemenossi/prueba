@@ -2,19 +2,20 @@ from flask import Flask, render_template
 import mysql.connector
 
 app = Flask(__name__)
-def obtener_datos():
-    db = mysql.connector.connect(
+
+db = mysql.connector.connect(
         host="centerbeam.proxy.rlwy.net",                                    
         port=12935,
         user="root",
         password="QbnIpcJeXYYoQYvhnPUjAALwmhmswmmg",
         database="railway"
     )
+
+def obtener_datos():
     cursor = db.cursor()
-    cursor.execute("SELECT id, descripcion FROM railway.tabla1")
+    cursor.execute("SELECT * from railway.Tabla1")
     resultados = cursor.fetchall()
     db.close()
-    
     return resultados
 
 
