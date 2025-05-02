@@ -11,7 +11,7 @@ def obtener_datos():
         database="railway"
     )
     cursor = db.cursor()
-    cursor.execute("SELECT id, descripcion FROM tabla1")
+    cursor.execute("SELECT id, descripcion FROM railway.tabla1")
     resultados = cursor.fetchall()
     db.close()
     return resultados
