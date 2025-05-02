@@ -27,7 +27,7 @@ def home():
 @app.route("/tabla1")
 def mostrar_tabla():
     datos = obtener_datos()
-    return render_template("tabla.html", datos2=datos)
+    return render_template("tabla1.html", datos2=datos)
 
 
 
