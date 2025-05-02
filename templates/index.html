@@ -8,5 +8,8 @@
 <body>
     <h1>¡Bienvenido a mi página web!</h1>
     <p>Este es mi primer sitio con Flask.</p>
+    <form action="{{ url_for('mostrar_tabla') }}">
+        <button type="submit">Ver Tabla 1</button>
+    </form>
 </body>
 </html>

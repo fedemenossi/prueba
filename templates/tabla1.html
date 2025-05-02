@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Datos</title>
+</head>
+<body>
+    <h1>Contenido de la Tabla</h1>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+        </tr>
+        {% for fila in datos %}
+        <tr>
+            <td>{{ fila[0] }}</td>
+            <td>{{ fila[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
