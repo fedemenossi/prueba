@@ -1,22 +1,36 @@
+
+import asyncio
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    ContextTypes,
+)
 
 # Comando /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("¡Hola! Soy tu bot de Telegram.")
+    await update.message.reply_text("👋 ¡Hola! Soy tu bot en Telegram usando PTB 22.1")
 
-if __name__ == '__main__':
-    import os
+# Comando /help
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("🛠 Comandos:\n/start - Iniciar\n/help - Ayuda")
 
-    # Token del bot
+# Función principal
+async def main():
+    # Reemplazá con tu token real de BotFather
     TOKEN = "123456789:ABCdefGHIjklMNOpqrSTUvwxYZ"
-    # Pegá aquí tu token de BotFather
 
-    # Crear la aplicación
-    app = ApplicationBuilder().token(TOKEN).build()
+    app = Application.builder().token(TOKEN).build()
 
-    # Agregar manejador para el comando /start
     app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("help", help_command))
 
-    # Ejecutar el bot
-    app.run_polling()
+    print("🤖 Bot iniciado con PTB 22.1")
+    await app.run_polling()
+
+# Iniciar
+if __name__ == "__main__":
+    asyncio.run(main())
+    
+    
+    
